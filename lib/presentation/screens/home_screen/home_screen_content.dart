@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:glasses_store_design/shared/colors.dart';
 import 'package:glasses_store_design/shared/models/category_model.dart';
 import 'package:glasses_store_design/shared/models/item_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -17,7 +14,7 @@ class HomeScreenContent extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(colors:[Colors.redAccent.shade100,Colors.pinkAccent.shade100,Colors.blueAccent.shade100,Colors.greenAccent.shade100,Colors.cyanAccent.shade100],begin: Alignment.topLeft,end: Alignment.bottomRight ),
+            gradient: LinearGradient(colors:[Colors.cyanAccent.shade100,Colors.grey.shade200],),
           ),
         ),
         SafeArea(
@@ -33,11 +30,11 @@ class HomeScreenContent extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: 'Search',
                         hintStyle: TextStyle(
-                          color: Colors.grey.shade200
+                          color: MyColors.secondaryColor
                         ),
-                        prefixIcon: Icon(Icons.search,color: Colors.grey.shade200,size: 20.px,),
+                        prefixIcon: Icon(Icons.search,color: MyColors.secondaryColor,size: 20.px,),
                         filled: true,
-                        fillColor: Colors.black.withOpacity(0.3),
+                        fillColor: MyColors.backGroundColor,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.px),
                           borderSide: BorderSide.none
@@ -46,16 +43,16 @@ class HomeScreenContent extends StatelessWidget {
                     ),
                   ),
                   CircleAvatar(
-                    backgroundColor: Colors.black.withOpacity(0.4),
+                    backgroundColor: MyColors.backGroundColor,
                     radius: 25.px,
-                    child: Icon(Icons.question_mark,color: Colors.grey.shade200,size: 25.px,),
+                    child: Icon(Icons.question_mark,color: MyColors.secondaryColor,size: 25.px,),
                   ),
                 ],
               ),
               SizedBox(height: 2.h,),
               Text('Style, Clarity,\nBrowse',
               style: TextStyle(
-                color: Colors.black,
+                color: MyColors.primaryColor,
                 fontWeight: FontWeight.w800,
                 fontSize: 30.px
               ),
@@ -69,7 +66,7 @@ class HomeScreenContent extends StatelessWidget {
                     itemBuilder: (context, index) => Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.px),
-                        color: Colors.grey.shade100.withOpacity(0.2),
+                        color: MyColors.backGroundColor,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -78,7 +75,10 @@ class HomeScreenContent extends StatelessWidget {
                           children: [
                             CircleAvatar(
                               radius: 25.px,
+                              backgroundColor: Colors.white,
                               child: Image(
+                                height: 5.h,
+                                width: double.infinity,
                                 fit: BoxFit.cover,
                                 image: AssetImage(categoryList[index].image),
                               ),
@@ -86,7 +86,7 @@ class HomeScreenContent extends StatelessWidget {
                             SizedBox(width: 2.w,),
                             Text(categoryList[index].type,
                             style: TextStyle(
-                              color: Colors.black,fontWeight: FontWeight.w600,fontSize: 18.px
+                              color: MyColors.primaryColor,fontWeight: FontWeight.w600,fontSize: 18.px
                             ),
                             ),
                           ],
@@ -131,7 +131,7 @@ class HomeScreenContent extends StatelessWidget {
                             ),
                             Text(itemList[index].preefing,
                               style: TextStyle(
-                                color: Colors.grey.shade200,
+                                color:MyColors.secondaryColor,
                                 fontSize: 15.px,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -140,7 +140,7 @@ class HomeScreenContent extends StatelessWidget {
                               children: [
                                 Text(itemList[index].price,
                                   style: TextStyle(
-                                    color: Colors.black,
+                                    color: MyColors.primaryColor,
                                     fontSize: 20.px,
                                     fontWeight: FontWeight.w800,
                                   ),
