@@ -11,13 +11,62 @@ class DetailsScreenView extends StatelessWidget {
     return  Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(10.0),
         child: Container(
-          width: double.infinity,
-          height: 10.h,
+          padding: EdgeInsets.all(3.w),
           decoration: BoxDecoration(
-            color: Colors.yellow.withOpacity(0.8),
-            borderRadius: BorderRadius.all(Radius.circular(15.px))
+            color: Colors.yellowAccent.shade200.withOpacity(0.4),
+            borderRadius: BorderRadius.all(Radius.circular(30.px))
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+             /* IconButton(onPressed: (){},
+                  style: ButtonStyle(
+                    minimumSize: WidgetStatePropertyAll(Size.fromRadius(15.px)),
+                    backgroundColor: WidgetStatePropertyAll(Colors.grey.shade300)
+                  ),
+                  icon: Icon(Icons.add,color: Colors.black,size: 20.px,)),
+              Text('1',
+              style: TextStyle(
+                fontSize: 25.px,
+                fontWeight: FontWeight.w800,
+                color: Colors.black
+              ),
+              ),
+              IconButton(onPressed: (){},
+                  style: ButtonStyle(
+                      minimumSize: WidgetStatePropertyAll(Size.fromRadius(15.px)),
+                      backgroundColor: WidgetStatePropertyAll(Colors.grey.shade300)
+                  ),
+                  icon: Icon(Icons.remove,color: Colors.black,size: 20.px,)),
+              SizedBox(width: 2.w,),*/
+              ElevatedButton(onPressed:(){},
+                  style:  ButtonStyle(
+                    minimumSize: WidgetStatePropertyAll(Size.fromRadius(30.px)),
+                    backgroundColor: WidgetStatePropertyAll(Colors.black87)
+                  ),
+                  child:Text('Add to cart',
+                  style: TextStyle(
+                    color: Colors.grey.shade200,
+                    fontSize: 20.px,
+                    fontWeight: FontWeight.w700
+                  ),
+                  )),
+              SizedBox(width: 2.w,),
+              ElevatedButton(onPressed:(){},
+            style:  ButtonStyle(
+                minimumSize: WidgetStatePropertyAll(Size.fromRadius(30.px)),
+                backgroundColor: const WidgetStatePropertyAll(Colors.black87)
+            ),
+            child:Text('Try it',
+              style: TextStyle(
+                  color: Colors.grey.shade200,
+                  fontSize: 20.px,
+                  fontWeight: FontWeight.w700
+              ),
+            )),
+            ],
           ),
         ),
       ),
