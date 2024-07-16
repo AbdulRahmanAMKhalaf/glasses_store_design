@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:glasses_store_design/presentation/screens/splash_screen/splash_screen_view.dart';
+import 'package:glasses_store_design/presentation/screens/home_screen/home_screen_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
-          home: const SplashScreenView(),
+          home: const HomeScreenView(),
         );
       },
     );

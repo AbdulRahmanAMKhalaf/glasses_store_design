@@ -3,8 +3,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lottie/lottie.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SplashScreenContent extends StatelessWidget {
+class SplashScreenContent extends StatefulWidget {
   const SplashScreenContent({super.key});
+
+  @override
+  State<SplashScreenContent> createState() => _SplashScreenContentState();
+}
+
+class _SplashScreenContentState extends State<SplashScreenContent> {
 
   @override
   Widget build(BuildContext context) {
